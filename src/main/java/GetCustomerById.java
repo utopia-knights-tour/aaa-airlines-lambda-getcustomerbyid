@@ -21,7 +21,6 @@ public class GetCustomerById implements RequestHandler<ApiGatewayRequest, ApiGat
 		LambdaLogger logger = context.getLogger();
 		Map<String, String> headers = new HashMap<String, String>();
 		headers.put("Access-Control-Allow-Origin", "*");
-		headers.put("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 		try {
 			if (request.getPathParameters() == null || request.getPathParameters().get("customerId") == null) {
 				return new ApiGatewayProxyResponse(400, headers, null);
